@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shayari Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>TheShayarihub</h2>
+
+    <a href="/upload" class="btn">+</a>
+
+    <div class="shayari-container">
+        <% shayariList.forEach(shayari => { %>
+            <div class="shayari-box">
+                <p><%= shayari.content %></p>
+                <form action="/delete/<%= shayari.id %>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
